@@ -1,0 +1,119 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+<access origin="*" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="apple-mobile-web-app-status-bar-style" content="red">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, viewport-fit=cover" />
+<title>Log in</title>
+<link rel="stylesheet" type="text/css" href="styles/style.css">
+<link rel="stylesheet" type="text/css" href="fonts/css/fontawesome-all.min.css">
+<link rel="stylesheet" type="text/css" href="styles/framework.css">
+<link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i|Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i" rel="stylesheet">
+
+</head>
+
+<body>
+
+<div id="page-transitions" class="page-build light-skin highlight-blue">
+	<div class="page-content page-content-full">
+
+		<div class="cover-item cover-item-full" style="background-image:url(images/pictures_vertical/bg10.jpg);">
+			<div class="cover-content cover-content-center">
+ <form method="POST">
+			<div class="page-login content-boxed content-boxed-padding top-0 bottom-0 bg-white">
+				<img class="preload-image login-bg responsive-image bottom-0 shadow-small" src="images/pictures/10w.jpg" data-src="images/pictures/10w.jpg" alt="img">
+				<h1 class="ultrabold color-black top-25 bottom-5 font-30">Ingresar</h1>
+				<p class="smaller-text bottom-10">Bienvenido, por favor introduce tus datos correcatmente.</p>
+
+				<div class="page-login-field top-15">
+					<i class="fa fa-user"></i>
+					<input type="text" placeholder="usuario" name="usuario" id="usuario" required>
+					<em>(required)</em>
+				</div>
+				<div class="page-login-field bottom-15">
+					<i class="fa fa-lock"></i>
+					<input type="password" placeholder="Password" name="password" id="password" required>
+					<em>(required)</em>
+				</div>
+
+
+
+				<button class="button back-button bg-highlight button-full button-rounded button-s uppercase ultrabold shadow-medium" id="btnSubmit" typoe="button">LOGIN</button>
+			</div>
+</form>
+			</div>
+			<div class="cover-overlay overlay bg-black opacity-80"></div>
+		</div>
+
+
+	</div>
+</div>
+
+
+<script src="scripts/jquery.js"></script>
+<script src="scripts/plugins.js"></script>
+<script src="scripts/custom.js"></script>
+<script>
+	$('#btnSubmit').on('click',function() { 
+	
+	 
+	// recolecta los valores que inserto el usuario
+	var user = $('#usuario').val();
+		 var pass = $('#password').val();
+	
+  	archivoValidacion = "http://192.168.1.41/siop/public/api/login"
+	$.getJSON( archivoValidacion, { usuario:user,password:pass})
+	.done(function(respuestaServer) {		
+		if(respuestaServer.success == true){
+		  
+		 	/// si la validacion es correcta, muestra la pantalla "home"
+			window.location.href = "captura.html";
+		  
+		}else{
+		  
+		  /// ejecutar una conducta cuando la validacion falla
+		  
+		}
+  
+	})
+	return false;
+})
+</script>
+    <!--<script>
+
+
+	$('#btnSubmit').on('click',function(){
+		send();
+		//window.location.href = "http://stackoverflow.com";
+
+	});
+
+	 function send(){
+		 var user = $('#usuario').val();
+		 var pass = $('#password').val();
+		 $.ajax({
+		 type: "POST",
+      		crossDomain: true,
+
+ cache: false,
+		  url: "http://192.168.1.41/siop/public/api/login",
+		  data: {usuario:user,password:pass},
+		  success: function(data){
+		 console.log(data);
+
+			   if(data.resultado == false){ 
+			   }
+			    else
+			    {
+			    /* Imprimimos el resultado JSON */
+			    $('body').append('<div>'+data.usuario+'<br />'+data.password+'</div>');
+    		}
+ 		}
+	});
+}
+				</script>-->
+
+				</body>
+
+	</html>
