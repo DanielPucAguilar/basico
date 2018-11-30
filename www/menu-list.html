@@ -1,0 +1,73 @@
+<div class="menu-title">
+    <span class="color-highlight">paginas disponibles</span>
+    <h1>navegacion</h1>
+    <a href="#" class="menu-hide"><i class="fa fa-times"></i></a>
+</div>
+<div class="menu-page">
+    <ul class="menu-list">
+        <li id="menu-index">
+            <a href="home.html">
+                <i class='fa fa-home color-green-dark'></i>
+                <span>Pagina Principal</span>
+                <em>Ir al Menu Principal</em>
+                <i class="fa fa-angle-right"></i>
+            </a>
+        </li>
+        <li id="menu-components">
+            <a href="captura.html">
+                <i class='fa fa-cog color-yellow-dark'></i>
+                <span>Capturar</span>
+                <em>Capturar un contenedor</em>
+                <i class="fa fa-angle-right"></i>
+            </a>
+        </li>
+        <li id="menu-pages">
+            <a href="soon.html">
+                <i class='fa fa-heart color-red-dark'></i>
+                <span>Consultar</span>
+                <em>Consultar un contenedor Capturado</em>
+                <i class="fa fa-angle-right"></i>
+            </a>
+        </li>
+        <li id="menu-media">
+            <a href="soon.html">
+                <i class='fa fa-camera color-brown-light'></i>
+                <span>Graficas de Activida</span>
+                <em>Ver Estadisticas</em>
+                <i class="fa fa-angle-right"></i>
+            </a>
+        </li>
+        <li id="menu-contact">
+            <a href="soon.html">
+                <i class='fa fa-envelope color-blue-dark'></i>
+                <span>Previo</span>
+                <em>Solicitar previo en almacen</em>
+                <i class="fa fa-angle-right"></i>
+            </a>
+        </li>
+        <li id="menu-contact">
+            <a href="soon.html">
+                <i class='fa fa-envelope color-blue-dark'></i>
+                <span>Consultar Previo</span>
+                <em>Consultar un previo en almacen</em>
+                <i class="fa fa-angle-right"></i>
+            </a>
+        </li>
+        <li id="menu-contact">
+            <a href="soon.html">
+                <i class='fa fa-envelope color-blue-dark'></i>
+                <span>Salir</span>
+                <em>Cerrar sesion</em>
+                <i class="fa fa-angle-right"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+
+<script type="text/javascript">
+    $('#menu-hider, .close-menu, .menu-hide').on('click',function(){
+        $('.menu-box').removeClass('menu-box-active');
+        $('#menu-hider').removeClass('menu-hider-active');
+        return false;
+    });
+</script>
